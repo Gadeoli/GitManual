@@ -1,8 +1,10 @@
 # Git Start Manual
 Single commands to use git
 
-#Source
+
+## Source
 https://gist.githubusercontent.com/neilgee/9442209/raw/0745bd13e184e5d2e9abbcc061b8014f68d7cfed/git.css
+
 
 #### Set up your Git configuration 
 git config --global user.email "you@yourdomain.com"
