@@ -1,5 +1,5 @@
 # Git Start Manual
-Single commands to use git
+Git commands with comments
 
 
 ## Source
