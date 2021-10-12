@@ -7,6 +7,7 @@ https://gist.githubusercontent.com/neilgee/9442209/raw/0745bd13e184e5d2e9abbcc06
 
 
 #### Set up your Git configuration 
+``` 
 git config --global user.email "you@yourdomain.com"
 
 git config --global user.name "Your Name"
@@ -14,36 +15,52 @@ git config --global user.name "Your Name"
 git config --global core.editor "nano"
 
 git config --global color.ui true
-
+```
 
 #### See Git configuration 
+```
 git config --list
-
+```
 
 #### To initialise a local repository 
+```
 git init 
-
+```
   
 #### Add a file to the repo 
+```
 git add <filename>
+```
+
 
 
 #### Add all the files to the repo 
+```
 git add .
+```
+  
 
 
 #### Commit the change to git 
+```
 git commit -m "Message about the change goes here" <filename>
+```
+  
 
 
 #### Commit all changes to git of muliple files - no filenames needed
+```
 git commit -am "Message about the change goes here"
+```
+  
 
 
 #### See the commits in a historical linear fashion
+```
 git log 
-
+```
   
+
 #### Git has a 3 Tier Architecture:  Working - Staging - Repo
 ####
 #### Changes to files are put in a Checksum SHA-1 hash 40digit value containing parent hash, author and message.
@@ -52,7 +69,8 @@ git log
 
  
 #### Basic Commands  
-git status    the command 'git status' tells which files are not added or committed from Working to Staging to Repository
+``` ```
+  git status    the command 'git status' tells which files are not added or committed from Working to Staging to Repository
 
 git commit -m ""   Commits and changes to all files that are in Staging into Repo 
 
