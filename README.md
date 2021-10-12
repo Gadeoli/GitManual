@@ -1,10 +1,5 @@
 # Git Start Manual
-Git commands with notes
-
-
-## Source
-https://gist.githubusercontent.com/neilgee/9442209/raw/0745bd13e184e5d2e9abbcc061b8014f68d7cfed/git.css
-
+Git commands with notes. [Source](https://gist.githubusercontent.com/neilgee/9442209/raw/0745bd13e184e5d2e9abbcc061b8014f68d7cfed/git.css)
 
 #### Set up your Git configuration 
 ``` 
@@ -69,8 +64,7 @@ git log
 
  
 #### Basic Commands  
-``` ```
-  git status    the command 'git status' tells which files are not added or committed from Working to Staging to Repository
+```git status``` the command 'git status' tells which files are not added or committed from Working to Staging to Repository
 
 git commit -m ""   Commits and changes to all files that are in Staging into Repo 
 
