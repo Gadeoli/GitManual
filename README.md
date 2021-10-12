@@ -66,55 +66,54 @@ git log
 #### Basic Commands  
 ```git status``` the command 'git status' tells which files are not added or committed from Working to Staging to Repository
 
-git commit -m ""   Commits and changes to all files that are in Staging into Repo 
+```git commit``` -m ""   Commits and changes to all files that are in Staging into Repo 
 
-git diff   show changes between Working and Local Repo, no file supplied shows all files 
+```git diff``` show changes between Working and Local Repo, no file supplied shows all files 
 
-git diff --staged   shows changes between Staged and Local Repo 
+```git diff --staged``` shows changes between Staged and Local Repo 
 
-git rm file.txt   will remove file from working then git commit -m "" to also remove from Repo
+```git rm file.txt``` will remove file from working then git commit -m "" to also remove from Repo
 
-git rm --cached file.txt  leaves copy of file in Working but removes from Staging and Repo
+```git rm --cached file.txt``` leaves copy of file in Working but removes from Staging and Repo
 
-git mv   rename or move files - then git commit -m "" to move to Repo
+```git mv``` rename or move files - then git commit -m "" to move to Repo
 
-git commit -am "text goes here"  adds all files straight to Repo from Staging if they have changes - meaning they skip git add
+```git commit -am "text goes here"``` adds all files straight to Repo from Staging if they have changes - meaning they skip git add
 
-git checkout -- file.txt   restore Repo file to Working Directory using current branch 
+```git checkout -- file.txt``` restore Repo file to Working Directory using current branch 
 
-git reset --soft HEAD^  restore repo file to staging
+```git reset --soft HEAD^``` restore repo file to staging
 
-git reset HEAD file.txt   Move a Stage file out of Stage back to Working
+```git reset HEAD file.txt``` Move a Stage file out of Stage back to Working
 
-git commit --amend -m "message" file.txt  Change last commit to Repo (only last one can change)
+```git commit --amend -m "message" file.txt``` Change last commit to Repo (only last one can change)
 
 
 #### Reverting --soft --mixed --hard will go back to previous commits
-git log  gets the sha1s so you can see the coomits where you want revert  back to 
+```git log``` gets the sha1s so you can see the coomits where you want revert  back to 
 
-git reset --soft sha  changes Repo but not Staging or Working
+```git reset --soft sha``` changes Repo but not Staging or Working
 
-git reset --mixed sha  changes Repo and Staging but not Working
+```git reset --mixed sha``` changes Repo and Staging but not Working
 
-git reset --hard sha  changes all 3 Tiers
+```git reset --hard sha``` changes all 3 Tiers
 
-git clean -f  remove untracked files from Working 
-
-.gitignore  ignores files to track in Working / track the .gitignore file
+```git clean -f``` remove untracked files from Working 
 
 
+#### .gitignore  ignores files to track in Working / track the .gitignore file
 #### Global Ignore  create in home folder  
 .gitignore_global
- Add in 
+#### Add in 
 .DS_Store
 .Trashes
 .Spotlight_V100
 
-git config --global core.excludesfile ~/.gitignore_global  add to gitconfig
+```git config --global core.excludesfile ~/.gitignore_global``` add to gitconfig
 
 
 #### Stop tracking changes
-git rm --cached file.txt  leaves copy in Repo and Working
+```git rm --cached file.txt``` leaves copy in Repo and Working
 
 
 #### Track Folders changes
@@ -122,56 +121,57 @@ git rm --cached file.txt  leaves copy in Repo and Working
 
 
 #### Commit Log 
+```
 git ls-tree HEAD
 git ls-tree master
 git log --oneline
 git log --author="Neil"
 git log --grep="temp"
-
+```
 
 #### Show Commits
-git show dc094cb   show SHA1
+```git show dc094cb``` show SHA1
 
 
 #### Compare Commits
 #### Branches
-git branch   Show local branch name - the asterisk * is the one we are on
+```git branch``` Show local branch name - the asterisk * is the one we are on
 
-git branch -r  Shows remote branches
+```git branch -r```  Shows remote branches
 
-git branch -a  Shows local and remote
+```git branch -a```  Shows local and remote
 
-git branch newbranch  creates a new branch
+```git branch newbranch```  creates a new branch
 
-git checkout newbranch  switch to new branch
+```git checkout newbranch```  switch to new branch
 
-git checkout -b oldbranch  creates and switches to new branch 
+```git checkout -b oldbranch```  creates and switches to new branch 
 
-git push origin newbranch  Push new branch to remote
+```git push origin newbranch```  Push new branch to remote
 
 
 #### Diff in Branches
-git diff master..otherbranch   shows diff
+```git diff master..otherbranch``` shows diff
 
-git diff --color-words master..otherbranch   shows diff in color
+```git diff --color-words master..otherbranch``` shows diff in color
 
-git branch --merged   shows any merged branches
+```git branch --merged``` shows any merged branches
 
 
 #### Rename Branch
-git branch -m oldname newname
+```git branch -m oldname newname```
 
 
 #### Delete  Branch
-git branch -d nameofbranch
+```git branch -d nameofbranch```
 
 
 #### Merge Branch 
-git merge branchname  be on the receiver branch to merge the other branch
+```git merge branchname```  be on the receiver branch to merge the other branch
 
 
 #### Merge Conflicts between the same file on 2 branches are marked in HEAD and other branch
-git merge --abort   Abort basically cancels the merge
+```git merge --abort```   Abort basically cancels the merge
 
 
 #### Manually Fix Files and commit
