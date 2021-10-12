@@ -171,57 +171,56 @@ git log --grep="temp"
 
 
 #### Merge Conflicts between the same file on 2 branches are marked in HEAD and other branch
-```git merge --abort```   Abort basically cancels the merge
+```git merge --abort``   Abort basically cancels the merge
 
 
 #### Manually Fix Files and commit
 #### The Stash
-git stash save "text message here"
+```git stash save "text message here"```
 
-git stash list  shows whats in stash
+```git stash list``` shows whats in stash
 
-git stash show -p stash@{0}  Show the diff in the stash
+```git stash show -p stash@{0}``` Show the diff in the stash
 
-git stash pop stash@{0}   restores the stash deletes the tash
+```git stash pop stash@{0}``` restores the stash deletes the tash
 
-git stash apply stash@{0}   restores the stash and keeps the stash
+```git stash apply stash@{0}``` restores the stash and keeps the stash
 
-git stash clear   removes all stash
+```git stash clear``` removes all stash
 
-git stash drop stash@{0}
+```git stash drop stash@{0}```
 
 
 #### Remotes
-#### You can push and fetch to the remote server, merge any differences - then push any new to the remote - 3 branches work remote server branch, local origin master and local master
-#### 
+#### You can push and fetch to the remote server, merge any differences - then push any new to the remote - 3 branches work remote server branch, local origin master and local master 
 #### Create a repo in GitHub, then add that remote to your local repo 
-#### You will need to add a SSH key from your local machine and store it in GitHub - ref: https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
-git remote add origin https://github.com/neilgee/genesischild.git   origin can be named whatever followed by the remote
+#### You will need to add a SSH key from your local machine and store it in GitHub - [ref](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
+```git remote add origin https://github.com/neilgee/genesischild.git origin``` can be named whatever followed by the remote
 
-git remote  to show all remotes
+```git remote``` to show all remotes
 
-git remote show origin to see remote URL*/
+```git remote``` show origin to see remote URL*/
 
-git remote remove origin  to remove remote
+```git remote remove origin```  to remove remote
 
-git remote rm origin  to remove remote
+```git remote rm origin```  to remove remote
 
 
 #### Push to Remote from Local
-git push -u origin master  push to remote(origin) and branch(master)
+```git push -u origin master``` push to remote(origin) and branch(master)
 
 
 #### Cloning a GitHub Repo - create and get the URL of a new repository from GitHub, then clone that to your local repo, example below uses local repo named 'nameoffolder'
-git clone https://github.com/neilgee/genesischild.git nameoffolder
+```git clone https://github.com/neilgee/genesischild.git nameoffolder```
 
 #### Push to Remote from Local - more - since when we pushed the local to remote we used -u parameter then the remote branch is tracked to the local branch and we just need to use...
-git push
+```git push```
 
-git push origin newbranch  Push a branch to a remote
+```git push origin newbranch```  Push a branch to a remote
 
 
 #### Fetch changes from a cloned Repo
-git fetch origin   Pulls down latest committs from remote origin/master not origin, also pull down any branches pushed to Repo
+```git fetch origin``` Pulls down latest committs from remote origin/master not origin, also pull down any branches pushed to Repo
 
 
 #### Fetch before you work
@@ -230,106 +229,102 @@ git fetch origin   Pulls down latest committs from remote origin/master not orig
 
  
 #### Merge with origin/master
-git merge origin/master
+```git merge origin/master```
 
-git pull  you can also do git pull which is = git fetch + git merge
-
-Checkout/Copy a remote branch to local
-
-git branch branchname origin/branchname   this will bring the remote branch to local and track with the remote
+#### git pull  you can also do git pull which is = git fetch + git merge
+#### Checkout/Copy a remote branch to local
+```git branch branchname origin/branchname``` this will bring the remote branch to local and track with the remote
 
 
 #### Delete branch
-git branch -d branchname
+```git branch -d branchname```
 
 
 #### Checkout and switch branch and track to remote
-git checkout -b nontracking origin/nontracking
+```git checkout -b nontracking origin/nontracking```
 
 
 #### Remove remote branch
-git push origin --delete branch
+```git push origin --delete branch```
 
 
 #### Undoing
-git checkout path-to-file restores a file before it is staged
+```git checkout path-to-file``` restores a file before it is staged
 
-git reset HEAD path-to-file if it is staged - restores a file from last commit and then git checkout path-to-file
+```git reset HEAD path-to-file``` if it is staged - restores a file from last commit and then git checkout path-to-file
 
-git checkout HEAD^ path-to-file if is staged and committed - restores from last commit
+```git checkout HEAD^ path-to-file``` if is staged and committed - restores from last commit
 
-git reset --hard HEAD^ restore prior commit
-
-
-#### Keeping the local synced with the origin after the local is reset
- * ref  http://stackoverflow.com/questions/17667023/git-how-to-reset-origin-master-to-a-commit
+```git reset --hard HEAD^``` restore prior commit
 
 
-git push --force origin master
+#### Keeping the local synced with the origin after the local is reset [ref](http://stackoverflow.com/questions/17667023/git-how-to-reset-origin-master-to-a-commit)  
 
-git rm --cached filetoremove  Removes a file that is committed from repo but leaves it still locally - handy when you've added something that you don't want tracked
+
+```git push --force origin master```
+
+```git rm --cached filetoremove``` Removes a file that is committed from repo but leaves it still locally - handy when you've added something that you don't want tracked
 
 #### Undo last push to github - below forces  commit entered in to overwrite remote - so in case below origin is local and master is remote*/
-git push -f origin last_known_good_commit:master
+```git push -f origin last_known_good_commit:master```
 
 
 #### Tags
 #### Adding a Tag
-git tag -a v1.0.0 -m "add message here" tagging a commit with a version number*/
+```git tag -a v1.0.0 -m "add message here"``` tagging a commit with a version number*/
 
-git push --tags  pushes tag info to master remote
+```git push --tags```  pushes tag info to master remote
 
 
 #### You can checkout a commit and add a tag to that commit by checking out its SHA
-git checkout f1f4a3d checking out a commit - see the commit SHAS by git log
+```git checkout f1f4a3d``` checking out a commit - see the commit SHAS by git log
 
 
 #### Changing Tag to different commit 
 #### Deleting the tag
-git tag -d v1.0.0 change version number to suit - we are deleting it here*/
-git push origin :refs/tags/v1.0.0 push change to remote - change 'origin' to your remote name*/
+```git tag -d v1.0.0``` change version number to suit - we are deleting it here*/
+```git push origin :refs/tags/v1.0.0``` push change to remote - change 'origin' to your remote name*/
 
 
 #### Adding it again - but this time it would be to the latest commit
-git tag v1.0.0 create new tag - change version number to suit
-git push origin master --tags  assign to latest commit  - change 'origin' to your remote name*/
+```git tag v1.0.0``` create new tag - change version number to suit
+```git push origin master --tags```  assign to latest commit  - change 'origin' to your remote name*/
 
 
 
 #### Syncing a Fork
-####  Have the Fork already created in Github
-#### http://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository
-git clone git@github.com:me/myfork.git myfork  make a local copy of the fork
-cd into the repo*/
-git remote add upstream https://github.com/theotherguy/theoriginal.git  make an upstream remote repo
-git remote -v  check all the repos
+#### [Have the Fork already created in Github](http://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository)
+```git clone git@github.com:me/myfork.git myfork```  make a local copy of the fork
+```cd into the repo*/```
+```git remote add upstream https://github.com/theotherguy/theoriginal.git```  make an upstream remote repo
+```git remote -v``` check all the repos
 
-git fetch upstream  get the original repo
-git checkout master  ensure you in your local master branch
+```git fetch upstream``` get the original repo
+```git checkout master``` ensure you in your local master branch
 
-git rebase upstream/master  rewrite your local master branch on top of the upstream
+```git rebase upstream/master``` rewrite your local master branch on top of the upstream
 
-git push -f origin master  needs -f the first time after rebase
+```git push -f origin master``` needs -f the first time after rebase
 #### This will result in the fork master branch being 'even' with the original master branch
 
 
 
 #### Creating an Upstream Branch from an already added branch
-git push --set-upstream dev master  Here the remote 'dev' branch is set as Upstream to the local 'master' branch
+```git push --set-upstream dev master``` Here the remote 'dev' branch is set as Upstream to the local 'master' branch
 
-git branch -vv  Shows which branch is the Upstream, if you need to change just use the preceeding command again
+```git branch -vv``` Shows which branch is the Upstream, if you need to change just use the preceeding command again
 
 
 #### Checking out a Fork with a certain pull request on a new branch
-git checkout -b newbranchname
+```git checkout -b newbranchname```
 
-git pull https://github.com/username/the-repo.git theirbranchname
+```git pull https://github.com/username/the-repo.git theirbranchname```
   
   
-#### Remove Git submodule - https://stackoverflow.com/questions/1759587/un-submodule-a-git-submodule
-git rm --cached submodule_path # delete reference to submodule HEAD (no trailing slash)
-git rm .gitmodules             # if you have more than one submodules,
-                               # you need to edit this file instead of deleting!
-rm -rf submodule_path/.git     # make sure you have backup!!
-git add submodule_path         # will add files instead of commit reference
-git commit -m "remove submodule"
+#### [Remove Git submodule](https://stackoverflow.com/questions/1759587/un-submodule-a-git-submodule)
+```git rm --cached submodule_path``` delete reference to submodule HEAD (no trailing slash)
+```git rm .gitmodules ``` if you have more than one submodules,
+#### you need to edit this file instead of deleting!
+```rm -rf submodule_path/.git``` make sure you have backup!!
+```git add submodule_path``` will add files instead of commit reference
+```git commit -m "remove submodule"```
